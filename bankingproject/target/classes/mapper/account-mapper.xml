@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.melda.bankingproject.repository.IAccountRepository">
+	<insert id="createAccount" parameterType="Account">
+		INSERT INTO
+		accounts(user_id,bank_id,number,type,balance,creation_date,last_update_date,is_deleted)
+		VALUES(#{user_id},#{bank_id},#{number},#{type},#{balance},#{creation_date},#{last_update_date},#{is_deleted})
+	</insert>
+	<select id="selectById" parameterType="int" resultType="Account">
+		SELECT *
+		FROM accounts WHERE id= #{id}
+	</select>
+	<select id="selectByAccountNumber" parameterType="long"
+		resultType="Account">
+		SELECT * FROM accounts WHERE number= #{number}
+	</select>
+	<update id="removeAccount" parameterType="int">
+		UPDATE accounts SET
+		is_Deleted = 1 WHERE id = #{id}
+	</update>
+	<update id="updateBalance" parameterType="Account">
+		UPDATE accounts SET
+		balance = #{balance},last_update_date=#{last_update_date} WHERE id = #{id}
+	</update>
+		
+	<select id="selectAll" resultMap="accountDetailResultMap" parameterType="int">
+		SELECT * , accounts.id as account_id, banks.id as bank_id FROM accounts INNER JOIN banks ON banks.id = accounts.bank_id WHERE accounts.user_id = #{user_id}
+	</select>
+	<resultMap type="AccountWithBank" id="accountDetailResultMap" autoMapping="true">
+		<id column="id" property="account_id" />
+		<association property="bank">
+			<id property="id" column="bank_id" />
+			<result property="name" column="name"/>
+		</association>
+	</resultMap>
+
+</mapper>

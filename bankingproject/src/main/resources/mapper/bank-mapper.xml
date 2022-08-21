@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace = "com.melda.bankingproject.repository.IBankRepository">
+    	<insert id="createBank" parameterType="String">
+    		INSERT INTO banks(name) VALUES(#{name})
+    	</insert>
+    	<select id="selectByName" parameterType="String" resultType="Bank" >
+    		SELECT * FROM banks WHERE name= #{name}
+    	</select>
+    </mapper>
