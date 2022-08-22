@@ -34,7 +34,7 @@ Implemented with JWT spring security, logging with Apache Kafka and log4j.
 - Collect API
 - Angular JS (Frontend)
 
-## Below are the application pictures.
+## Below are the project pictures.
 
 -Auth
 
