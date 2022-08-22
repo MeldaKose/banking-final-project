@@ -42,7 +42,7 @@ Implemented with JWT spring security, logging with Apache Kafka and log4j.
 
 -Register
 
-![register picture](images_for_readme/login.jpg)
+![register picture](images_for_readme/register.jpg)
 
 -Transfer
 
