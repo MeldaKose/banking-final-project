@@ -38,16 +38,16 @@ Implemented with JWT spring security, logging with Apache Kafka and log4j.
 
 -Auth
 
-![login picture](images_for_readme/login.png)
+![login picture](images_for_readme/login.jpg)
 
 -Register
 
-![register picture](images_for_readme/login.png)
+![register picture](images_for_readme/login.jpg)
 
 -Transfer
 
-![transfer picture](images_for_readme/transfer.png)
+![transfer picture](images_for_readme/transfer.jpg)
 
 -Accounts
 
-![accounts picture](images_for_readme/get-accounts.png)
+![accounts picture](images_for_readme/get-accounts.jpg)
